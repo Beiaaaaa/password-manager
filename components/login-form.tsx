@@ -13,8 +13,13 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
+import { NextFont } from "next/dist/compiled/@next/font"
 
-export default function LoginForm() {
+export default function LoginForm({
+    font
+}:{
+    font: NextFont
+}) {
     const router = useRouter()
     const [isMounted, setIsMounted] = useState(false)
     const [ isLoading, setIsLoading ] = useState(false)
@@ -77,9 +82,9 @@ export default function LoginForm() {
     }
 
     return (
-        <Card className="w-full relative">
+        <Card className="w-full relative bg-white/70">
             <CardHeader>
-                <CardTitle>Bei&apos;s admin</CardTitle>
+                <CardTitle className={font.className}>🧚‍♀️ Bei&apos;s paradise🧚‍♀️</CardTitle>
             </CardHeader>
             <form onSubmit={handleSubmit}>
                 <CardContent>
